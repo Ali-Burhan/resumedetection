@@ -5,24 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resume Detection</title>
 </head>
-<body>
-    <h1>Resume Detection using AI</h1>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eligendi vel aut repellendus cupiditate velit, minus facilis placeat dignissimos rerum qui excepturi earum blanditiis fugit non! Soluta officiis fuga deserunt sint.</p>
-    <h2>Upload Your Resume</h2>
-    <form action="/pred" method="post" enctype="multipart/form-data">
-        <input type="file" name="resume" id="resume" accept=".pdf, .txt" required>
-        <input type="submit" value="Submit">
-    </form>
+<body style="background-color: black; color: white;">
+    <!-- <h1 style="text-align: center;">Resume Category Detection With AI</h1> -->
+    <div style="max-width: 700px; margin: auto; display: flex; flex-direction: column; align-items: center;border: 1px solid yellow; border-radius: 10px;padding: 10px; box-shadow: 0px 20px 20px 0px yellow;">
+        <div style="display: flex; flex-direction: column; align-items: center;"> 
 
-    {% if message %}
-    <p>{{message}}</p>
-    {% endif %}
-
-    {% if predicted_category %}
-    <hr>
-    <br>
-    <hr>
-    <p>Category is {{predicted_category}}</p>
-    {% endif %}
+            <h1 style="background-color: yellow; padding: 10px; color: black;border-radius: 20px;">Resume Detection using AI</h1>
+            <h2>Upload Your Resume</h2>
+            <form action="/pred" method="post" enctype="multipart/form-data">
+                <input type="file" name="resume" id="resume" accept=".pdf, .txt" required>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+            
+            {% if message %}
+            <p style="background-color: red; padding: 5px; border-radius: 5px; color: white;">{{message}}</p>
+        {% endif %}
+        
+        {% if predicted_category %}
+        
+        <p style="background-color: green; padding: 5px; border-radius: 5px; color: white;">Category is {{predicted_category}}</p>
+        {% endif %}
+    </div>
 </body>
 </html>
