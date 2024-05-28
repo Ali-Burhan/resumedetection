@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Detection</title>
+</head>
+<body>
+    <h1>Resume Detection using AI</h1>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eligendi vel aut repellendus cupiditate velit, minus facilis placeat dignissimos rerum qui excepturi earum blanditiis fugit non! Soluta officiis fuga deserunt sint.</p>
+    <h2>Upload Your Resume</h2>
+    <form action="/pred" method="post" enctype="multipart/form-data">
+        <input type="file" name="resume" id="resume" accept=".pdf, .txt" required>
+        <input type="submit" value="Submit">
+    </form>
+
+    {% if message %}
+    <p>{{message}}</p>
+    {% endif %}
+
+    {% if predicted_category %}
+    <hr>
+    <br>
+    <hr>
+    <p>Category is {{predicted_category}}</p>
+    {% endif %}
+</body>
+</html>
